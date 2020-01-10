@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block css %}
+    <style>
+        label[for='submit'] {
+            display: none
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <h2>学生登录</h2>
+    <form action="/s_login" method="post" novalidate>
+        {% for filed in loginForm %}
+            <p>{{ filed.label }} {{ filed }}{{ filed.errors.0 }}</p>
+        {% endfor %}
+    </form>
+{% endblock %}

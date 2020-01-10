@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+{% block css %}
+    <style>
+        label[for='submit'] {
+            display: none
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <h2>学生{{ curTitle }}</h2>
+    <form action="{{ curAction }}" method="post" novalidate>
+        {% for filed in stu %}
+            <p>{{ filed.label }} {{ filed }}{{ filed.errors.0 }}</p>
+        {% endfor %}
+    </form>
+{% endblock %}
